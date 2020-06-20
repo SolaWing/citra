@@ -1,7 +1,13 @@
+#!/usr/bin/env python
+
+
 from Crypto.Cipher import AES
 from Crypto.Util import Counter
 from sys import argv
 import struct
+
+# usage: $0 <inout 3ds_file>
+# 把3ds的游戏转化为破解的可被模拟器运行的程序
 
 rol = lambda val, r_bits, max_bits: \
     (val << r_bits%max_bits) & (2**max_bits-1) | \
